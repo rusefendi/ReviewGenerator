@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import random
 
+url_raw = 'https://market.yandex.ru/product/14271793/spec'
 reviews_count = 3
 text_path = "reviews.txt"
 reviews = open(text_path, 'r').read()
@@ -39,7 +40,7 @@ def print_reviews(n):
 
 
 def main():
-    html = get_html('https://market.yandex.ru/product/14271793/spec')
+    html = get_html(url_raw)
     get_specifications(html)
     print_reviews(reviews_count)
 
